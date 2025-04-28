@@ -364,16 +364,6 @@ einer .RData-Datei</h1>
 Pflanzen und Pilze über eine <code>.RData</code>-Datei laden. Diese
 Anleitung erklärt, wie du die Daten in R lädst und für die Analyse
 vorbereitest.</p>
-<div id="warum-über-eine-.rdata-datei-laden" class="section level2">
-<h2>Warum über eine <code>.RData</code>-Datei laden?</h2>
-<ul>
-<li>Alle relevanten Parameter (Boden, Pflanzen, Pilze) sind bereits
-organisiert.</li>
-<li>Effizientes Laden mehrerer Datensätze gleichzeitig.</li>
-<li>Fehlerquellen bei der manuellen Datenübertragung werden
-vermieden.</li>
-</ul>
-</div>
 <div id="schritt-1-setze-dein-arbeitsverzeichnis" class="section level2">
 <h2>Schritt 1: Setze dein Arbeitsverzeichnis</h2>
 <p>Bevor du die Datei laden kannst, musst du dein Arbeitsverzeichnis
@@ -393,8 +383,9 @@ getwd()</code></pre>
 </div>
 <div id="schritt-2-lade-die-.rdata-datei" class="section level2">
 <h2>Schritt 2: Lade die <code>.RData</code>-Datei</h2>
-<p>Nun kannst du die bereitgestellte <code>.RData</code>-Datei
-laden.</p>
+<p>Lade die .RData-Datei vom Blackboard in dein aktuelles
+Arbeitsverzeichnis herunter. Nun kannst du die bereitgestellte
+<code>.RData</code>-Datei laden.</p>
 <pre class="r"><code># Lade die Datei mit den Kursdaten
 load(&quot;kursdaten.RData&quot;)
 

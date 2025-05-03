@@ -383,10 +383,8 @@ df_A &lt;- df_A %&gt;%
   mutate(Kurs_name = rep(&quot;A&quot;,16))%&gt;%
   relocate(Kurs_name, .after = 1)%&gt;%
   arrange(Gruppenname)%&gt;%
-  mutate(Wurzellaenge = as.numeric(gsub(&quot;,&quot;,&quot;.&quot;, Wurzellaenge)))%&gt;%
-  mutate(pH.Wert = as.numeric(gsub(&quot;,&quot;,&quot;.&quot;, pH.Wert)))%&gt;%
-  mutate(Sporenanzahl = as.numeric(gsub(&quot;,&quot;,&quot;.&quot;, Sporenanzahl)))%&gt;%
-  mutate(Wassergehalt = as.numeric(gsub(&quot;,&quot;,&quot;.&quot;, Wassergehalt)))</code></pre>
+  mutate(across(c(&quot;Wurzellaenge&quot;,&quot;pH.Wert&quot;,&quot;Sporenanzahl&quot;,&quot;Wassergehalt&quot;,&quot;Shannon.Diversitaet_Insekten&quot;,&quot;Evenness_Insekten&quot;,&quot;mittlere.Lichtzahl&quot;,&quot;mittlere.Temperaturzahl&quot;,&quot;mittlere.Feuchtezahl&quot;,&quot;mittlere.Reaktionszahl&quot;,&quot;mittlere.Stickstoffzahl&quot;)
+  , ~as.numeric(gsub(&quot;,&quot;,&quot;.&quot;, ., fixed = TRUE))))</code></pre>
 <p>For course B</p>
 <pre class="r"><code>df_B &lt;- df_B[df_B[,&quot;Gruppenname&quot;]!=&quot;TEST1&quot;,]
 df_B &lt;- df_B %&gt;%
@@ -394,10 +392,8 @@ df_B &lt;- df_B %&gt;%
   relocate(Kurs_name, .after = 1)%&gt;%
   arrange(Gruppenname)%&gt;%
   mutate(Gruppenname = c(&quot;Gruppe 1&quot;,&quot;Gruppe 1&quot;,&quot;Gruppe 2&quot;,&quot;Gruppe 2&quot;,&quot;Gruppe 3&quot;,&quot;Gruppe 3&quot;,&quot;Gruppe 4&quot;,&quot;Gruppe 4&quot;,&quot;Gruppe 5&quot;,&quot;Gruppe 5&quot;))%&gt;%
-  mutate(Wurzellaenge = as.numeric(gsub(&quot;,&quot;,&quot;.&quot;, Wurzellaenge)))%&gt;%
-  mutate(pH.Wert = as.numeric(gsub(&quot;,&quot;,&quot;.&quot;, pH.Wert)))%&gt;%
-  mutate(Sporenanzahl = as.numeric(gsub(&quot;,&quot;,&quot;.&quot;, Sporenanzahl)))%&gt;%
-  mutate(Wassergehalt = as.numeric(gsub(&quot;,&quot;,&quot;.&quot;, Wassergehalt)))</code></pre>
+  mutate(across(c(&quot;Wurzellaenge&quot;,&quot;pH.Wert&quot;,&quot;Sporenanzahl&quot;,&quot;Wassergehalt&quot;,&quot;Shannon.Diversitaet_Insekten&quot;,&quot;Evenness_Insekten&quot;,&quot;mittlere.Lichtzahl&quot;,&quot;mittlere.Temperaturzahl&quot;,&quot;mittlere.Feuchtezahl&quot;,&quot;mittlere.Reaktionszahl&quot;,&quot;mittlere.Stickstoffzahl&quot;)
+  , ~as.numeric(gsub(&quot;,&quot;,&quot;.&quot;, ., fixed = TRUE))))</code></pre>
 <p>For course C</p>
 <pre class="r"><code>df_C &lt;-df_C[df_C[,&quot;Gruppenname&quot;]!=&quot;&quot;,]
 df_C &lt;- df_C[df_C[,&quot;Gruppenname&quot;]!=&quot;TEST1&quot;,]
@@ -406,11 +402,8 @@ df_C &lt;- df_C %&gt;%
   mutate(Kurs_name = rep(&quot;C&quot;,12))%&gt;%
   relocate(Kurs_name, .after = 1)%&gt;%
   arrange(Gruppenname)%&gt;%
-  mutate(Gruppenname = c(&quot;Gruppe 1&quot;,&quot;Gruppe 1&quot;,&quot;Gruppe 2&quot;,&quot;Gruppe 2&quot;,&quot;Gruppe 3&quot;,&quot;Gruppe 3&quot;,&quot;Gruppe 4&quot;,&quot;Gruppe 4&quot;,&quot;Gruppe 5&quot;,&quot;Gruppe 5&quot;,&quot;Gruppe 6&quot;,&quot;Gruppe 6&quot;))%&gt;%
-           mutate(Wurzellaenge = as.numeric(gsub(&quot;,&quot;,&quot;.&quot;, Wurzellaenge)))%&gt;%
-           mutate(pH.Wert = as.numeric(gsub(&quot;,&quot;,&quot;.&quot;, pH.Wert)))%&gt;%
-           mutate(Sporenanzahl = as.numeric(gsub(&quot;,&quot;,&quot;.&quot;, Sporenanzahl)))%&gt;%
-  mutate(Wassergehalt = as.numeric(gsub(&quot;,&quot;,&quot;.&quot;, Wassergehalt)))
+  mutate(across(c(&quot;Wurzellaenge&quot;,&quot;pH.Wert&quot;,&quot;Sporenanzahl&quot;,&quot;Wassergehalt&quot;,&quot;Shannon.Diversitaet_Insekten&quot;,&quot;Evenness_Insekten&quot;,&quot;mittlere.Lichtzahl&quot;,&quot;mittlere.Temperaturzahl&quot;,&quot;mittlere.Feuchtezahl&quot;,&quot;mittlere.Reaktionszahl&quot;,&quot;mittlere.Stickstoffzahl&quot;)
+  , ~as.numeric(gsub(&quot;,&quot;,&quot;.&quot;, ., fixed = TRUE))))
 </code></pre>
 </div>
 <div id="schritt-3-save-the-dataset-as-.rdata-files" class="section level2">

@@ -11,7 +11,7 @@
 
 <meta name="author" content="Mohan Bi" />
 
-<meta name="date" content="2025-04-28" />
+<meta name="date" content="2025-05-03" />
 
 <title>Anleitung: Laden unserer Kursdatensätze aus einer .RData-Datei</title>
 
@@ -353,7 +353,7 @@ display: none;
 <h1 class="title toc-ignore">Anleitung: Laden unserer Kursdatensätze aus
 einer .RData-Datei</h1>
 <h4 class="author">Mohan Bi</h4>
-<h4 class="date">2025-04-28</h4>
+<h4 class="date">2025-05-03</h4>
 
 </div>
 
@@ -443,13 +443,13 @@ bedeutet, dass ein signifikanter Zusammenhang besteht.</p>
 ungestörten Flächen unterscheidet.</p>
 <pre class="r"><code># Boxplot mit ggplot2 erstellen
 
-ggplot(df_combi, aes(x = Zustand..gestört.ungestört., y = Hyphen, fill = Zustand..gestört.ungestört.)) +
+ggplot(df_combi, aes(x = Zustand, y = Hyphen, fill = Zustand)) +
   geom_boxplot(alpha = 0.5) +
-  geom_jitter(aes(color = Zustand..gestört.ungestört.), alpha = 0.6, width = 0.2) +
+  geom_jitter(aes(color = Zustand), alpha = 0.6, width = 0.2) +
   xlab(&quot;Boden Zustand&quot;) 
 
 # Wilcoxon-Test durchführen
-wilcox.test(Hyphen ~ Zustand..gestört.ungestört., data = df_combi)</code></pre>
+wilcox.test(Hyphen ~ Zustand, data = df_combi)</code></pre>
 <hr />
 </div>
 </div>
